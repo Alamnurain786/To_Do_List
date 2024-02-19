@@ -44,6 +44,19 @@ listContainer.addEventListener("click", function (e) {
     }
 }, false);
 
+
+// Add event listener to the input box for the Enter key
+inputBox.addEventListener("keypress", function (e) {
+    // Check if the key pressed was the Enter key
+    if (e.keyCode === 13) {
+        // Prevent the default action to avoid form submission
+        e.preventDefault();
+        // Call the addTask function
+        addTask();
+    }
+});
+
+
 // Function to save the data to local storage
 function saveData() {
     localStorage.setItem("listContainer", listContainer.innerHTML);
